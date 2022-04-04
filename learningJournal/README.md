@@ -29,11 +29,11 @@
 <!-- What I Am Doing -->
 ## What I Am Doing
 First day of my apprenticeship with Activate. Appreciate to Anya and Russell for the warm welcome and introduction to our learning journal. Get a new Macboook with I am not familiar with. It took some time to install and set up for the program. <br />
-*Xcode - Done!<br />
-*Visual Studio Code - Done!<br />
-*node & npm - Done!<br />
-*cocoapods - Done!<br />
-*GitHub - Done!<br />
+* Xcode - Done!<br />
+* Visual Studio Code - Done!<br />
+* node & npm - Done!<br />
+* cocoapods - Done!<br />
+* GitHub - Done!<br />
 Ready to Start my React Native learning for next 40days!
 
 
