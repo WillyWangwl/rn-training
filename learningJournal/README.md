@@ -34,25 +34,28 @@ First day of my apprenticeship with Activate. Appreciate to Anya and Russell for
 * node & npm - Done!<br />
 * cocoapods - Done!<br />
 * GitHub - Done!<br />
+
 Ready to Start my React Native learning for next 40days!
+<br />
 
 
 <!-- Challenge -->
 ## Challenge
 Learn to use mac keyboard that a bit different with window keyboard. Not familiar with Github, Face some issue while push to my repo, thanks to Alvin for helping me solve my issue. 
+<br />
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template#about-the-project)
+<br />
 
 <!-- CONTACT -->
 ## Contact
 
 Wang Wei Li - weiliwang@activate.sg<br />
 Project Link: [https://github.com/WillyWangwl/rn-training](https://github.com/WillyWangwl/rn-training)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+<br />
 
 <!-- Useful Link -->
 ## Useful Link
