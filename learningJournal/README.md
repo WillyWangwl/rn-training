@@ -71,13 +71,13 @@ Learn to use mac keyboard that a bit different with window keyboard. Not familia
 <!-- CONTACT -->
 ## Contact
 
-Wang Wei Li - weiliwang@activate.sg
+Wang Wei Li - weiliwang@activate.sg<br />
 Project Link: [https://github.com/WillyWangwl/rn-training](https://github.com/WillyWangwl/rn-training)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Useful Link -->
 ## Useful Link
-[Xcode](https://developer.apple.com/xcode/)
-[Visual-Studio-Code](https://code.visualstudio.com/docs?dv=osx)
-[GitHub](https://stackoverflow.com/questions/18200248/
+[Xcode](https://developer.apple.com/xcode/)<br />
+[Visual-Studio-Code](https://code.visualstudio.com/docs?dv=osx)<br />
+[GitHub](https://stackoverflow.com/questions/18200248/)<br />
