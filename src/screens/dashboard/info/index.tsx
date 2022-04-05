@@ -90,8 +90,7 @@ const Info: React.FC = () => {
   }
   let day:DayOfTheWeek;
   day = DayOfTheWeek.MON;
-  type dayToDisplay = keyof typeof DayOfTheWeek;
-  console.log(dayToDisplay);
+  type dayToDisplay = keyof typeof DayOfTheWeek; 
   console.log(day);
 
 
