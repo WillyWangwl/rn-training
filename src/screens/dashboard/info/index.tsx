@@ -204,7 +204,7 @@ const Info: React.FC = () => {
   }
   displayDetail({stdName: "willy",stdAge: 35,stdAddress: "Singapore"});
 
-  type NumberToSum = {
+  interface NumberToSum {
     x: number;
     y: number;
     z: number;
