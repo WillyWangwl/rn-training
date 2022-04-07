@@ -1,11 +1,11 @@
-import { restElement, TypeofTypeAnnotation } from "@babel/types";
+import { NumberLiteralTypeAnnotation, opaqueType, restElement, TypeofTypeAnnotation } from "@babel/types";
 import React from "react";
 import { Text, View } from "react-native";
 import styles from "./styles";
 
 const Info: React.FC = () => {
   // -------- Testing 1---------
-  const birthdayGreeter = ( name:string, age?:number = 15, job?:string = "ssssss"): string => {
+  const birthdayGreeter = ( name:string, age:number = 15, job:string = "ssssss"): string => {
     return `happy birthday ${name}, you are now ${age} years old! and your job is ${job}`;
   };
 
@@ -131,14 +131,13 @@ const Info: React.FC = () => {
   // ---------------------------
 
   // --------Function---------
-  function add(n1: number, n2:number) {
-    return n1 + n2;
-  }
-  function printResult(num: number): void {
-    console.log(`Result : ${num}`);
-  }
+  const add = (n1: number, n2:number): number => n1 + n2;
+  const minus = (n1: number, n2:number): number => n1 - n2;
+  
+  const printResult = (num: number): void => console.log(`Result : ${num}`);
+
   // call back function
-  function addAndHandle(n1:number, n2: number, cb: (num:number) => void ) {
+  const addAndHandle = (n1:number, n2: number, cb: (num:number) => void ) => {
     const result = n1 + n2
     cb(result);
   }
@@ -146,10 +145,10 @@ const Info: React.FC = () => {
   printResult( add( 5 , 12 ) );
   // let combineValues:Function;
   let combineValues: ( a: number, b: number ) => number;
-  combineValues = add;
-  console.log( combineValues ( 8, 8 ) ); 
-  addAndHandle(10,30, (result) =>{
-    console.log(result);
+  combineValues = minus; 
+  console.log( combineValues ( 18, 8 ) ); 
+  addAndHandle(10,30, (resultX:number) =>{
+    console.log(resultX);
   })
 
   const greeting = ( firstName: string, lastName: string ="James" ) : string => `Hello ${firstName} ${lastName}`;
@@ -157,7 +156,7 @@ const Info: React.FC = () => {
   console.log(greeting("Willy"));
   console.log(greeting("Willy", "Wang"))
   
-  const combineAdd = <A,>(input1 : A, input2: A) : A => {
+  const combineAdd = <T,>(input1 : T, input2: T) : T => {
     return input1 + input2;
   }
   console.log(combineAdd(30,26));
@@ -204,28 +203,93 @@ const Info: React.FC = () => {
   }
   displayDetail({stdName: "willy",stdAge: 35,stdAddress: "Singapore"});
 
-  interface NumberToSum {
+  type NumberToSum  = {
     x: number;
-    y: number;
-    z: number;
+    readonly y: number;
+    z?: number;
   }
-  const sum = ({ x, y, z }:NumberToSum): void => {
-    console.log(x + y + z);
+  const sum = (numberTo:NumberToSum): void => {
+    console.log(numberTo.x + numberTo.y);
+    console.log(numberTo.z === undefined ? 0 : numberTo.z);
    }
-   const sumNumber = {x: 10, y: 20, z:30};
+   let sumNumber: NumberToSum  = {x: 10, y: 20};
+   sumNumber.y =50 //can't be reassign t
+   console.log(sumNumber)
    sum(sumNumber);
-   
+   // ---------------------------
 
+  // --------Extending & intersection---------
+  interface PostalCode {
+    postalCode: number;
+  }
+  interface Address extends PostalCode{
+    name: string;
+  }
+  interface Unit  {
+    unit : string;
+  }
+  type AddressWithUnit = Address & Unit;
+  const showAddress = ( address : AddressWithUnit ):void => {
+    console.log(`${address.name} :: ${address.unit} :: ${address.postalCode}`)
+  }
+  showAddress({name: "canberra", postalCode: 123456, unit:"#10-20"})
+  // ---------------------------
 
- 
+  // --------class---------
+  interface GameObject {
+    x: number;
+    update() : void;
+  } // Everything in interface must be use in the class that implement.
+  class Player implements GameObject{
+    static playerCount = 0
+    static readonly maxSpeed = 5;
+    x = 0;
+    private y = 0;
+    // variable can be declare and assign in constructor with accessibility 
+    // modifiers expert for static
+    constructor(protected readonly name: string){ 
+      Player.playerCount++;
+    }
+    display(prefix :string): void {
+      console.log(`${prefix} Player ${this.name} is at ${this.x}, ${this.y} `)
+    }
+    update() : void {
+      // do something
+    };
+  }
+  class Gunner extends Player {
+    bullet: number = 0;
+    constructor( name: string, public gunType : string) {
+      super(name);
+    }
+    update(): void {
+      super.update()
+      this.bullet+=1;
+    }
+  }
+  let p = new Player("james");
+  p.x = 2; // value can be assign by this way except private.
+  console.log(p); // {"name": "james", "x": 2, "y": 0}
+  let p2= new Gunner("Kelly", "Machine Gun");
+  p2.display("2.") //  2. Player Kelly is at 0, 0
+  console.log(p2); 
+  // {"bullet": 0, "gunType": "Machine Gun", "name": "Kelly", "x": 0, "y": 0}
+  console.log("player : " + Player.playerCount); //Read static item my class.name
+  // ---------------------------
 
-
-  
-
-
-
-
-
+  // --------Generic class---------
+  class keyValue<T, U> {
+    constructor(private key: T, private val: U ){}
+    display(): void {
+      console.log(`key = ${this.key}, val = ${this.val}`);
+    }
+  }
+  let kp1 = new keyValue(1, "Steven");
+  kp1.display(); // key = 1, val = Steven
+  let kp2 = new keyValue("Hello", "World");
+  kp2.display(); // key = Hello, val = World
+  let kp3 = new keyValue( [1,2,3], {x:"abc" , y:"efg"})
+  kp3.display(); // key = 1,2,3, val = [object Object]
 
   return (
     <View style={styles.container}>
