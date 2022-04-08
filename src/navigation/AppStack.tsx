@@ -7,6 +7,8 @@ import InfoScreen from "../screens/dashboard/info";
 import LoginScreen from "../screens/login";
 import WelcomeScreen from "../screens/welcome";
 import { NavigationNames } from "../constants/navigation-names";
+//add on
+import WillyScreen from "../screens/dashboard/Willy";
 
 type RootStackParamList = {
   Login: undefined;
@@ -51,6 +53,13 @@ export const AppStack = (): ReactElement => {
             title: "Info"
           }}
         />
+        <Stack.Screen
+          name={NavigationNames.Willy}
+          component={WillyScreen}
+          options={{
+            title: "Testing"
+          }}
+        /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
