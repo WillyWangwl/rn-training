@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 import styles from "./style"
 import HelloWorld from "./hello";
 // import RandomNumberGenerator, {pi, phi, squareTwo} from "./maths";
 import * as maths from "./maths"
-import Person from "./decorator";
+
 
 
 const Willy: React.FC = () => {
@@ -14,20 +14,20 @@ const Willy: React.FC = () => {
     // const circlePi : number = maths.pi;
     // maths.RandomNumberGenerator();
     // console.log( maths.addNumber(10, 15));
-    const person1 = new Person();
-    console.log(person1);
-    
-
-
+    const myName = "Willy"
     return (
         <View style={styles.container}>
-          <Text>
-            Willy Screen
+          <Text style={styles.welcome}>
+            Welcome To
           </Text>
+          <Text style={styles.myName}>
+            {myName} screen
+          </Text > 
           <Text>
-            {/* {circlePi} */}
+            10 * 10 = { 10 * 10}
           </Text>
         </View>
+        
     );
 
 

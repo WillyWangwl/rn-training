@@ -57,7 +57,7 @@ export const AppStack = (): ReactElement => {
           name={NavigationNames.Willy}
           component={WillyScreen}
           options={{
-            title: "Testing"
+            title: "My App"
           }}
         /> 
       </Stack.Navigator>
