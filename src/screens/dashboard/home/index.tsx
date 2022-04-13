@@ -17,6 +17,7 @@ const Home: React.FC = () => {
         Home Page: You don't need to login to view this page: (Login Status: {`${state.isLoggedIn}`})
       </Text>
       <Button title={buttonTitle} onPress={()=>navigate(NavigationNames.Detail)}/>
+      <Button title="Demo" onPress={()=>navigate(NavigationNames.Demo)}/>
       <Button title="Info (No Need Login)" onPress={()=>navigate(NavigationNames.Info)}/>
       <Button title="Willy Page" onPress={()=>navigate(NavigationNames.Willy)}/>
     </View>

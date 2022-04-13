@@ -9,12 +9,16 @@ import WelcomeScreen from "../screens/welcome";
 import { NavigationNames } from "../constants/navigation-names";
 //add on
 import WillyScreen from "../screens/dashboard/Willy";
+import Demo from "../screens/dashboard/demo";
 
 type RootStackParamList = {
   Login: undefined;
   Welcome: undefined;
   Dashboard: undefined;
-};
+  Demo: undefined;
+  Info: undefined;
+  Willy: undefined;
+};  
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -44,6 +48,13 @@ export const AppStack = (): ReactElement => {
           component={BottomTabStack}
           options={{
             headerLeft: () => null
+          }}
+        />
+        <Stack.Screen
+          name={NavigationNames.Demo}
+          component={Demo}
+          options={{
+            title: "Demo"
           }}
         />
         <Stack.Screen

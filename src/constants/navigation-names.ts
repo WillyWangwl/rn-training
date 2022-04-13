@@ -6,5 +6,6 @@ export enum NavigationNames {
   Info = "Info",
   Detail = "Detail",
   Settings = "Settings",
-  Willy = "Willy"
+  Willy = "Willy",
+  Demo = "Demo",
 }
