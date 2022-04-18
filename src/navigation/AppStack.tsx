@@ -10,6 +10,7 @@ import { NavigationNames } from "../constants/navigation-names";
 //add on
 import WillyScreen from "../screens/dashboard/Willy";
 import Demo from "../screens/dashboard/demo";
+import CounterScreen from "../screens/dashboard/counter"
 
 type RootStackParamList = {
   Login: undefined;
@@ -18,6 +19,7 @@ type RootStackParamList = {
   Demo: undefined;
   Info: undefined;
   Willy: undefined;
+  CounterScreen: undefined;
 };  
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -69,6 +71,13 @@ export const AppStack = (): ReactElement => {
           component={WillyScreen}
           options={{
             title: "My App"
+          }}
+        /> 
+        <Stack.Screen
+          name={NavigationNames.CounterScreen}
+          component={CounterScreen}
+          options={{
+            title: "Counter"
           }}
         /> 
       </Stack.Navigator>

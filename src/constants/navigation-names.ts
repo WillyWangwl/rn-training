@@ -8,4 +8,5 @@ export enum NavigationNames {
   Settings = "Settings",
   Willy = "Willy",
   Demo = "Demo",
+  CounterScreen = "CounterScreen"
 }

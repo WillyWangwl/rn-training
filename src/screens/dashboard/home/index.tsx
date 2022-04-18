@@ -20,6 +20,7 @@ const Home: React.FC = () => {
       <Button title="Demo" onPress={()=>navigate(NavigationNames.Demo)}/>
       <Button title="Info (No Need Login)" onPress={()=>navigate(NavigationNames.Info)}/>
       <Button title="Willy Page" onPress={()=>navigate(NavigationNames.Willy)}/>
+      <Button title="Counter Page" onPress={()=>navigate(NavigationNames.CounterScreen)}/>
     </View>
   );
 };
