@@ -10,7 +10,8 @@ import { NavigationNames } from "../constants/navigation-names";
 //add on
 import WillyScreen from "../screens/dashboard/Willy";
 import Demo from "../screens/dashboard/demo";
-import CounterScreen from "../screens/dashboard/counter"
+import CounterScreen from "../screens/dashboard/counter";
+import RandomColor from "../screens/dashboard/randomColor"
 
 type RootStackParamList = {
   Login: undefined;
@@ -20,6 +21,7 @@ type RootStackParamList = {
   Info: undefined;
   Willy: undefined;
   CounterScreen: undefined;
+  RandomColor: undefined;
 };  
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -78,6 +80,13 @@ export const AppStack = (): ReactElement => {
           component={CounterScreen}
           options={{
             title: "Counter"
+          }}
+        /> 
+        <Stack.Screen
+          name={NavigationNames.RandomColor}
+          component={RandomColor}
+          options={{
+            title: "Color"
           }}
         /> 
       </Stack.Navigator>
