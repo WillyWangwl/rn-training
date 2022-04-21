@@ -10,4 +10,5 @@ export enum NavigationNames {
   Demo = "Demo",
   CounterScreen = "CounterScreen",
   RandomColor = "RandomColor",
+  SquareScreen = "SquareScreen",
 }
