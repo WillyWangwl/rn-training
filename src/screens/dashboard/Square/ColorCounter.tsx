@@ -5,20 +5,33 @@ type Props = {
     color: string,
     onIncrease: Function;
     onDecrease: Function;
+    disableIncrease: boolean;
+    disableDecrease: boolean;
 }
 
-const ColorCounter:React.FC<Props> = (props) => {
+const ColorCounter:React.FC<Props> = (props:Props) => {
+    
     return (
         <View style={ styles.container }>
             <Text style={ [ styles.text, {color: "#000"} ] }>{props.color}</Text>
-            <TouchableOpacity style={ styles.btn } onPress={ ()=>props.onIncrease()}>
+            <TouchableOpacity style={ [styles.btn, (props.disableIncrease && disableStyle) ] } 
+                            onPress={ ()=>props.onIncrease() }
+                            disabled = {props.disableIncrease}
+            >
                 <Text style={ styles.text }>+</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={ styles.btn } onPress={ () =>props.onDecrease()}>
+            <TouchableOpacity style={ [styles.btn, props.disableDecrease && disableStyle] } 
+                                onPress={ () =>props.onDecrease()}
+                                disabled = { props.disableDecrease}
+            >
                 <Text style={ styles.text }>-</Text>
             </TouchableOpacity>
         </View>
     );
+}
+
+const disableStyle = {
+    opacity: 0.2,
 }
 
 const styles = StyleSheet.create({
@@ -42,7 +55,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth:1,
         borderRadius: 25,
-        backgroundColor: "#808080"
+        backgroundColor: "#808080",
     }
     
     
