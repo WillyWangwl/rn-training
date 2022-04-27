@@ -21,7 +21,7 @@ const reducer = ( state:State, action:Action ):State => {
 }
 
 const CounterScreen: React.FC = () => {
-    const [ state, dispatch ] = useReducer( reducer , initialValue)
+    const [ state , dispatch ] = useReducer( reducer , initialValue)
     return (
         <View style={styles.container}>
             {
