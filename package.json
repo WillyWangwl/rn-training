@@ -26,6 +26,7 @@
     "@react-navigation/stack": "^6.2.1",
     "axios": "^0.27.1",
     "dayjs": "^1.11.1",
+    "default": "^0.1.1",
     "react": "18.1.0",
     "react-native": "0.68.1",
     "react-native-gesture-handler": "^2.4.1",

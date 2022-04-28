@@ -2706,6 +2706,11 @@
   "resolved" "https://registry.npmjs.org/deepmerge/-/deepmerge-4.2.2.tgz"
   "version" "4.2.2"
 
+"default@^0.1.1":
+  "integrity" "sha1-OBZQXXJdKvWYNQUYF95qhy5V5xw="
+  "resolved" "https://registry.npmjs.org/default/-/default-0.1.1.tgz"
+  "version" "0.1.1"
+
 "defaults@^1.0.3":
   "integrity" "sha1-xlYFHpgX2f8I7YgUd/P+QBnz730="
   "resolved" "https://registry.npmjs.org/defaults/-/defaults-1.0.3.tgz"
