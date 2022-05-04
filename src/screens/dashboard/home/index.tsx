@@ -24,6 +24,7 @@ const Home: React.FC = () => {
       <Button title="Random Color Page" onPress={()=>navigate(NavigationNames.RandomColor)}/>
       <Button title="Square Page" onPress={()=>navigate(NavigationNames.SquareScreen)}/>
       <Button title="Text Page" onPress={()=>navigate(NavigationNames.TextScreen)}/>
+      <Button title="Restaurant" onPress={()=>navigate(NavigationNames.SearchScreen)}/>
     </View>
   );
 };
